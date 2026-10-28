@@ -1,0 +1,15 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+*.env
+
+# JavaScript
+node_modules/
+frontend/node_modules/
+dist/
+
+# Editor
+.vscode/
+.idea/
