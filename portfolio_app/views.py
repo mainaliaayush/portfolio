@@ -1,6 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from .models import Project, ContactMessage
+from .serializers import ProjectSerializer, ContactMessageSerializer
 
-# Create your views here.
-def portfolio_view(request):
-    return HttpResponse("Hello, This is my Portfolio")
+
+class ProjectViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+
+class ContactMessageViewSet(viewsets.ModelViewSet):
+    queryset = ContactMessage.objects.all()
+    serializer_class = ContactMessageSerializer
