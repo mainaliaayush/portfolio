@@ -11,7 +11,7 @@ function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/projects/')
+    fetch(`${import.meta.env.VITE_API_URL}/api/projects/`)
       .then((response) => response.json())
       .then((data) => setProjects(data))
   }, [])
